@@ -7,11 +7,3 @@ Hi, welcome to my blog, I am
  at <a href="https://github.com/zhangYaRan/" target="_blank">Github</a>
 
 
-<script type="text/javascript">
-	$(document).ready(function() {
-	    //为超链接加上target='_blank'属性
-		$('a[href^="http"]').each(function() {
-			$(this).attr('target', '_blank');
-		});
-	});
-</script>

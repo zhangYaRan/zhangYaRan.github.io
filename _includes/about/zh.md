@@ -9,11 +9,3 @@ Hey，欢迎来到我的博客，我是<a href="http://www.zhangyaran.cn/zhangYa
 职业是前端工程师，目前在 <a href="https://www.neisha.cc/" target="_blank">内啥网</a> 做前端相关的工作
 
 
-<script type="text/javascript">
-	$(document).ready(function() {
-	    //为超链接加上target='_blank'属性
-		$('a[href^="http"]').each(function() {
-			$(this).attr('target', '_blank');
-		});
-	});
-</script>
