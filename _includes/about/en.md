@@ -1,7 +1,10 @@
 > Yet another man.
 
 
-Hi, welcome to my blog, I am  [_@zhangYaRan_ (Zhang, YaRan)](http://www.zhangyaran.cn/zhangYaRanFunday.github.io/), 3 years of front-end development experience, mostly in [weibo.com](https://weibo.com/u/5138674825); And[zhihu](https://www.zhihu.com/people/xiang-zhi-yu-shen-dong)  at[Github](https://github.com/zhangYaRan/)
+Hi, welcome to my blog, I am
+<a href="http://www.zhangyaran.cn/zhangYaRanFunday.github.io" target="_blank">_@zhangYaRan_ (Zhang, YaRan)</a>, 3 years of front-end development experience, mostly in
+<a href="https://weibo.com/u/5138674825" target="_blank">weibo</a> And <a href="https://www.zhihu.com/people/xiang-zhi-yu-shen-dong" target="_blank">zhihu</a>
+ at <a href="https://github.com/zhangYaRan/" target="_blank">Github</a>
 
 
 <script type="text/javascript">
