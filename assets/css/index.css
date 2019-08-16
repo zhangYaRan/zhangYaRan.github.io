@@ -43,7 +43,6 @@ body {
       margin: 0 auto;
       margin-bottom: 1rem;
       width: 8rem;
-      height: 8rem;
       overflow: hidden;
       position: relative; }
       .container .side .me .portrait .loading {
@@ -88,9 +87,7 @@ body {
         -webkit-animation-delay: 0.8s; }
       .container .side .me .portrait img {
         display: none;
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%; }
+        width: 8rem; }
   .container .side .info-unit ul li label {
     display: inline-block;
     width: 20%; }

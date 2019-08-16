@@ -21,12 +21,7 @@
     <link rel="stylesheet" href="assets/css/typo.css">
     <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <script>
-        function loading() {
-            document.getElementsByClassName('avatar')[0].style.display = 'block';
-            document.getElementsByClassName('loading')[0].style.display = 'none';
-        }
-    </script>
+
 </head>
 
 <body>
@@ -112,7 +107,7 @@
             <!-- 个人肖像 -->
             <section class="me">
                 <section class="portrait">
-                    <div class="loading">
+                    <div class="loading" style="display: none">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -120,7 +115,7 @@
                         <span></span>
                     </div>
                     <!-- 头像照片 -->
-                    <img class="avatar" src="assets/images/avatar.jpg" onload="loading()">
+                    <img class="avatar" style="display: block" src="assets/images/avatar.jpg">
                 </section>
 
                 <h1 class="name">张亚然</h1>
@@ -429,6 +424,12 @@
     </aside>
 
     <script src="./assets/js/index.js"></script>
+    <script>
+        // function loading() {
+        //     document.getElementsByClassName('avatar')[0].style.display = 'block';
+        //     document.getElementsByClassName('loading')[0].style.display = 'none';
+        // }
+    </script>
 </body>
 
 </html>
