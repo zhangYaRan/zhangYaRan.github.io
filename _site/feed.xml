@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YaRan Blog</title>
+    <description> @zhangYaRan 张亚然 的个人博客，与你一起发现更大的世界。</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Fri, 16 Aug 2019 15:59:35 +0800</pubDate>
+    <lastBuildDate>Fri, 16 Aug 2019 15:59:35 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+      <item>
+        <title>Vue slot使用</title>
+        <description>&lt;h2 id=&quot;一如果指定了-slotslota&quot;&gt;一.如果指定了 slot=”slotA”&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class=&quot;home&quot;&amp;gt;
+    我是父组件
+    &amp;lt;Child&amp;gt;
+      &amp;lt;p slot=&quot;slotA&quot;&amp;gt;hello world&amp;lt;/p&amp;gt;
+    &amp;lt;/Child&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class=&quot;child&quot;&amp;gt;
+    &amp;lt;p&amp;gt;我是子组件&amp;lt;/p&amp;gt;
+    &amp;lt;slot name=&quot;slotA&quot;&amp;gt;slot1&amp;lt;/slot&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://img2018.cnblogs.com/blog/1722401/201906/1722401-20190624101422434-1778553576.png&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;二.如果没有指定slot，页面一样会显示&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class=&quot;home&quot;&amp;gt;
+    我是父组件
+    &amp;lt;Child&amp;gt;
+      &amp;lt;p&amp;gt;hello world&amp;lt;/p&amp;gt;
+    &amp;lt;/Child&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;rouge-gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;rouge-code&quot;&gt;&lt;pre&gt;&amp;lt;template&amp;gt;
+  &amp;lt;div class=&quot;child&quot;&amp;gt;
+    &amp;lt;p&amp;gt;我是子组件&amp;lt;/p&amp;gt;
+    &amp;lt;slot&amp;gt;slot1&amp;lt;/slot&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;/template&amp;gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://img2018.cnblogs.com/blog/1722401/201906/1722401-20190624101748038-1325381933.png&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;如果存在多个slot用第一种方法 指定name&lt;/p&gt;
+
+&lt;p&gt;父组件如果没有指定name，子组件却定义了name，是找不到对应的slot&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Aug 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/08/17/vue-slot/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/17/vue-slot/</guid>
+        
+        <category>Vue</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Vim 与中文输入法</title>
+        <description>&lt;p&gt;Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 &lt;code class=&quot;highlighter-rouge&quot;&gt;esc&lt;/code&gt; 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim 模式，而对于终端中用的 neovim，就只能尽量不输入中文了。&lt;/p&gt;
+
+&lt;p&gt;为了满足我 1% 用 vim 输入中文的场景（比如写博客），我还是想看看有没有什么解决方案，Google 出来的解决方案基本是：&lt;em&gt;在退出 insert 模式时记住当时的输入法，并自动切换到默认输入法（一般是英文）给 normal 模式用，并且在下一次进入 insert 模式时再切换回来。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;原生 vim 的话，可以使用 &lt;a href=&quot;https://github.com/ybian/smartim&quot;&gt;smartim&lt;/a&gt; 插件，原理是调用 &lt;a href=&quot;https://github.com/daipeihust/im-select&quot;&gt;im-select&lt;/a&gt; 这个 CLI 工具来切换输入法。&lt;/p&gt;
+
+&lt;p&gt;对于 VSCode-vim 的话，smartim 的移植也在近期的 PR 中被 merge 到了插件里，&lt;a href=&quot;https://github.com/VSCodeVim/Vim#use-im-select&quot;&gt;详情见文档的这部分配置&lt;/a&gt;，需要指定一下默认输入法和 im-select 的 binary 路径就好。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;
+不过实话说，在 vim 中编辑中文的效率和体验和英文比都是大打折扣的。因为中文分词难度太高，不像英文可以简单依靠一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;split &quot; &quot;&lt;/code&gt; 搞定。所以其实无论 vim（&lt;code class=&quot;highlighter-rouge&quot;&gt;w&lt;/code&gt;ord，&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;egin，&lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt;nd），emacs 还是操作系统自带的（比如 macOS 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;alt + 箭头&lt;/code&gt;） 「按词移动」功能对于中文都仅仅是跳转到下一个空格处而已，对于中文来说基本就是下一句了……其他常用操作诸如 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;eplace, &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt;ill 也都无法很好的工作。&lt;/p&gt;
+
+&lt;p&gt;不过也算聊胜于无吧，由于我常用 HHKB，能用 vim 操作的一个子集（&lt;code class=&quot;highlighter-rouge&quot;&gt;hjkl&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;I&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt; etc.）可能也比按住 &lt;code class=&quot;highlighter-rouge&quot;&gt;Fn&lt;/code&gt; 的方向键好用……&lt;/p&gt;
+</description>
+        <pubDate>Sat, 17 Aug 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/08/17/vim-cn-im/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/17/vim-cn-im/</guid>
+        
+        <category>Vim</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Hello 2019</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;“Yeah It’s on. ”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;前言&quot;&gt;前言&lt;/h2&gt;
+
+&lt;p&gt;张亚然 的 Blog 就这么开通了。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#build&quot;&gt;跳过废话，直接看技术实现 &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;2019 年，张亚然 总算有个地方可以好好写点东西了。&lt;/p&gt;
+
+&lt;p&gt;作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。&lt;/p&gt;
+
+&lt;p&gt;在玩了一段时间知乎之后，答题的快感又激起了我开博客的冲动，一不做二不休，花一天搞一个吧！&lt;/p&gt;
+
+&lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
+
+&lt;p&gt;接下来说说搭建这个博客的技术细节。&lt;/p&gt;
+
+&lt;p&gt;正好之前就有关注过 &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; + &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; 快速 Building Blog 的技术方案，非常轻松时尚。&lt;/p&gt;
+
+&lt;p&gt;其优点非常明显：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; 带来的优雅写作体验&lt;/li&gt;
+  &lt;li&gt;非常熟悉的 Git workflow ，&lt;strong&gt;Git Commit 即 Blog Post&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;利用 GitHub Pages 的域名和免费无限空间，不用自己折腾主机
+    &lt;ul&gt;
+      &lt;li&gt;如果需要自定义域名，也只需要简单改改 DNS 加个 CNAME 就好了&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jekyll 的自定制非常容易，基本就是个模版引擎&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;配置的过程中也没遇到什么坑，基本就是 Git 的流程，相当顺手&lt;/p&gt;
+
+&lt;p&gt;大的 Jekyll 主题上直接 fork 了 Clean Blog（这个主题也相当有名，就不多赘述了。唯一的缺点大概就是没有标签支持，于是我给它补上了。）&lt;/p&gt;
+
+&lt;p&gt;本地调试环境需要 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install jekyll&lt;/code&gt;，结果 rubygem 的源居然被墙了……后来手动改成了我大淘宝的镜像源才成功&lt;/p&gt;
+
+&lt;p&gt;Theme 的 CSS 是基于 Bootstrap 定制的，看得不爽的地方直接在 Less 里改就好了（平时更习惯 SCSS 些），&lt;strong&gt;不过其实我一直觉得 Bootstrap 在移动端的体验做得相当一般，比我在淘宝参与的团队 CSS 框架差多了……&lt;/strong&gt;所以为了体验，也补了不少 CSS 进去&lt;/p&gt;
+
+&lt;p&gt;最后就进入了耗时反而最长的&lt;strong&gt;做图、写字&lt;/strong&gt;阶段，也算是进入了&lt;strong&gt;写博客&lt;/strong&gt;的正轨，因为是类似 Hack Day 的方式去搭这个站的，所以折腾折腾着大半夜就过去了。&lt;/p&gt;
+
+&lt;p&gt;第二天考虑中文字体的渲染，fork 了 &lt;a href=&quot;http://www.typeisbeautiful.com/&quot;&gt;Type is Beautiful&lt;/a&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;font&lt;/code&gt; CSS，调整了字号，适配了 Win 的渣渲染，中英文混排效果好多了。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 16 Aug 2019 20:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/08/16/hello-2019/</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/16/hello-2019/</guid>
+        
+        <category>生活</category>
+        
+        <category>Meta</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Vim 与中文输入法</title>
+        <description>&lt;p&gt;Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 &lt;code class=&quot;highlighter-rouge&quot;&gt;esc&lt;/code&gt; 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim 模式，而对于终端中用的 neovim，就只能尽量不输入中文了。&lt;/p&gt;
+
+&lt;p&gt;为了满足我 1% 用 vim 输入中文的场景（比如写博客），我还是想看看有没有什么解决方案，Google 出来的解决方案基本是：&lt;em&gt;在退出 insert 模式时记住当时的输入法，并自动切换到默认输入法（一般是英文）给 normal 模式用，并且在下一次进入 insert 模式时再切换回来。&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;原生 vim 的话，可以使用 &lt;a href=&quot;https://github.com/ybian/smartim&quot;&gt;smartim&lt;/a&gt; 插件，原理是调用 &lt;a href=&quot;https://github.com/daipeihust/im-select&quot;&gt;im-select&lt;/a&gt; 这个 CLI 工具来切换输入法。&lt;/p&gt;
+
+&lt;p&gt;对于 VSCode-vim 的话，smartim 的移植也在近期的 PR 中被 merge 到了插件里，&lt;a href=&quot;https://github.com/VSCodeVim/Vim#use-im-select&quot;&gt;详情见文档的这部分配置&lt;/a&gt;，需要指定一下默认输入法和 im-select 的 binary 路径就好。&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;
+不过实话说，在 vim 中编辑中文的效率和体验和英文比都是大打折扣的。因为中文分词难度太高，不像英文可以简单依靠一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;split &quot; &quot;&lt;/code&gt; 搞定。所以其实无论 vim（&lt;code class=&quot;highlighter-rouge&quot;&gt;w&lt;/code&gt;ord，&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;egin，&lt;code class=&quot;highlighter-rouge&quot;&gt;e&lt;/code&gt;nd），emacs 还是操作系统自带的（比如 macOS 中的 &lt;code class=&quot;highlighter-rouge&quot;&gt;alt + 箭头&lt;/code&gt;） 「按词移动」功能对于中文都仅仅是跳转到下一个空格处而已，对于中文来说基本就是下一句了……其他常用操作诸如 &lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;，&lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;eplace, &lt;code class=&quot;highlighter-rouge&quot;&gt;t&lt;/code&gt;ill 也都无法很好的工作。&lt;/p&gt;
+
+&lt;p&gt;不过也算聊胜于无吧，由于我常用 HHKB，能用 vim 操作的一个子集（&lt;code class=&quot;highlighter-rouge&quot;&gt;hjkl&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;o&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;I&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;v&lt;/code&gt; etc.）可能也比按住 &lt;code class=&quot;highlighter-rouge&quot;&gt;Fn&lt;/code&gt; 的方向键好用……&lt;/p&gt;
+</description>
+        <pubDate>Sat, 06 Oct 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/10/06/vim-cn-im/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/10/06/vim-cn-im/</guid>
+        
+        <category>Vim</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>程序员中的梦想家</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;本文首发于我的知乎专栏 &lt;a href=&quot;https://zhuanlan.zhihu.com/p/38722466&quot;&gt;The Little Programmer&lt;/a&gt;，转载请保留链接 ;)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。&lt;/p&gt;
+
+&lt;p&gt;我每周都要被 infra 的坑 block 得无法工作几次搞得非常沮丧，后来我发现这个锅除了要扔给 FB 外，还有一大半要扔给我周围这群 visionary 的同事们，我工作直接需要接触到的区区五六个人，发起/创造了 Infer, React, Reason, ReasonReact, BuckleScript…&lt;/p&gt;
+
+&lt;p&gt;所以这大概就是见证/参与这些 idea 成长的代价吧，也意识到这些东西不是在刚开始就像后来大家接受流行时那么美好的。React 发布 5 周年生日时回放 Jordan/Tom 2013 年第一次对外发布 React/JSX 的视频。我问 Jordan 说你后来怎么没再去分享了。他说你不知道我那天讲完下来被所有听众指着批评。React 第一次在内部使用是 2011 年在 news feed，然后是 2012 年 instagram (pete hunt)，所以这个时间其实很长很长。&lt;/p&gt;
+
+&lt;p&gt;很多人（包括我）都会经常觉得 XYZ 新事物跟老东西比太新、太不成熟、体验太不好、想要解决的问题太多、解决方案太 overkill、然后就没有然后了，但其实说不定你在看的这个就是 next big thing 呢。这些梦想家们 vision 里的 big picture 太大了，有的人可能在半个 picture 出来的时候就可以看出来了，有的人则可能要等到整个 picture 都快填满了才看得出来。&lt;/p&gt;
+
+&lt;p&gt;如果不是因为 Ads/Messenger 的坑深 React/Reason/Flux 也就不会在这里诞生了，&lt;/p&gt;
+
+&lt;p&gt;如果不是因为 Facebook 的坑深 GraphQL/Infer/Hack/Flow/Buck 也就不会在这里诞生了。&lt;/p&gt;
+
+&lt;p&gt;正是有一群开垦者不怕坑深才使得各种 idea 成为了大家手上好用的 tool 啊。&lt;/p&gt;
+
+&lt;p&gt;梦想家程序员们的工作价值于实干主义的程序员，总是很容易在过程中被低估、忽视，或是得不到尊重。而又在流行之后被神化，仿佛是那个人早已洞察一切一样。其实梦想家的工作，也是一点点累加，一点点迭代起来的。他们也需要伯乐和追随者的支持和帮助。&lt;/p&gt;
+
+&lt;p&gt;Chenglou 这个人总是在巨兴奋与巨沮丧之间切换，这段时间下来，我开始能感受这种情绪的来源了。&lt;/p&gt;
+
+&lt;p&gt;他总是用一句话来总结他回答我的吐槽、抱怨、疑问、惊叹，我就用这句话来结尾好了：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“Welcome to the producer side!”&lt;/strong&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Jun 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/06/30/dreamer/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/06/30/dreamer/</guid>
+        
+        <category>Facebook</category>
+        
+        <category>生活</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
