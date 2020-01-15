@@ -11,13 +11,11 @@
     <meta name="theme-color" content="#000000">
 
     <!-- Open Graph -->
-    <meta property="og:title"
-        content="张亚然的博客 | zhangYaRan Blog">
-    
+    <meta property="og:title" content="张亚然的博客 | zhangYaRan Blog">
+
     <meta property="og:type" content="website">
-    <meta property="og:description"
-        content="我干了什么 究竟拿了时间换了什么">
-    
+    <meta property="og:description" content="我干了什么 究竟拿了时间换了什么">
+
     <meta property="og:image" content="http://localhost:4000/img/avatar-zyr.jpg">
     <meta property="og:url" content="http://localhost:4000/">
     <meta property="og:site_name" content="张亚然的博客 | zhangYaRan Blog">
@@ -58,117 +56,118 @@
 </head>
 
 <!-- hack iOS CSS :active style -->
+
 <body ontouchstart="">
 
     <!-- Navigation -->
 
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
 
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">YaRan Blog</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="huxblog_navbar">
-            <div class="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    <li>
-                        <a href="/about/">About</a>
-                    </li>
-                    
-                    
-                    
-                    <li>
-                        <a href="/archive/">Archive</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    <li>
-                        <a href="/portfolio/">My collection</a>
-                    </li>
-                    
-                    
-                    
-                    
-                    
-                    
-                </ul>
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">YaRan Blog</a>
             </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div id="huxblog_navbar">
+                <div class="navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+
+
+
+
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+
+
+
+                        <li>
+                            <a href="/archive/">Archive</a>
+                        </li>
+
+
+
+
+
+                        <li>
+                            <a href="/portfolio/">My collection</a>
+                        </li>
+
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
-<script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
-    var $body   = document.body;
-    var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#huxblog_navbar');
-    var $collapse = document.querySelector('.navbar-collapse');
+        <!-- /.container -->
+    </nav>
+    <script>
+        // Drop Bootstarp low-performance Navbar
+        // Use customize navbar with high-quality material design animation
+        // in high-perf jank-free CSS3 implementation
+        var $body = document.body;
+        var $toggle = document.querySelector('.navbar-toggle');
+        var $navbar = document.querySelector('#huxblog_navbar');
+        var $collapse = document.querySelector('.navbar-collapse');
 
-    var __HuxNav__ = {
-        close: function(){
-            $navbar.className = " ";
-            // wait until animation end.
-            setTimeout(function(){
-                // prevent frequently toggle
-                if($navbar.className.indexOf('in') < 0) {
-                    $collapse.style.height = "0px"
-                }
-            },400)
-        },
-        open: function(){
-            $collapse.style.height = "auto"
-            $navbar.className += " in";
+        var __HuxNav__ = {
+            close: function () {
+                $navbar.className = " ";
+                // wait until animation end.
+                setTimeout(function () {
+                    // prevent frequently toggle
+                    if ($navbar.className.indexOf('in') < 0) {
+                        $collapse.style.height = "0px"
+                    }
+                }, 400)
+            },
+            open: function () {
+                $collapse.style.height = "auto"
+                $navbar.className += " in";
+            }
         }
-    }
 
-    // Bind Event
-    $toggle.addEventListener('click', function(e){
-        if ($navbar.className.indexOf('in') > 0) {
-            __HuxNav__.close()
-        }else{
-            __HuxNav__.open()
-        }
-    })
+        // Bind Event
+        $toggle.addEventListener('click', function (e) {
+            if ($navbar.className.indexOf('in') > 0) {
+                __HuxNav__.close()
+            } else {
+                __HuxNav__.open()
+            }
+        })
 
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
-    document.addEventListener('click', function(e){
-        if(e.target == $toggle) return;
-        if(e.target.className == 'icon-bar') return;
-        __HuxNav__.close();
-    })
-</script>
+        /**
+         * Since Fastclick is used to delegate 'touchstart' globally
+         * to hack 300ms delay in iOS by performing a fake 'click',
+         * Using 'e.stopPropagation' to stop 'touchstart' event from 
+         * $toggle/$collapse will break global delegation.
+         * 
+         * Instead, we use a 'e.target' filter to prevent handler
+         * added to document close HuxNav.  
+         *
+         * Also, we use 'click' instead of 'touchstart' as compromise
+         */
+        document.addEventListener('click', function (e) {
+            if (e.target == $toggle) return;
+            if (e.target.className == 'icon-bar') return;
+            __HuxNav__.close();
+        })
+    </script>
 
 
     <!-- Page Header -->
@@ -179,171 +178,174 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="site-heading">
-        
-          <h1>YaRan Blog</h1>
-          <span class="subheading">我干了什么 究竟拿了时间换了什么</span>
+    <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+                    <div class="site-heading">
+
+                        <h1>YaRan Blog</h1>
+                        <span class="subheading">我干了什么 究竟拿了时间换了什么</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</header>
+    </header>
 
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-        
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
+
+            <!-- USE SIDEBAR -->
+            <!-- PostList Container -->
+            <div class="
                 col-lg-8 col-lg-offset-1
                 col-md-8 col-md-offset-1
                 col-sm-12
                 col-xs-12
                 postlist-container
             ">
-    			
-<div class="post-preview">
-    <a href="/2019/08/17/vue-slot/">
-        <h2 class="post-title">
-            Vue slot使用
-        </h2>
-        
-        <h3 class="post-subtitle">
-            
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                一.如果指定了 slot=”slotA”
-1
-2
-3
-4
-5
-6
-7
-8
-&lt;template&gt;
-  &lt;div class="home"&gt;
-    我是父组件
-    &lt;Child&gt;
-      &lt;p slot="slotA"&gt;hello world&lt;/p&gt;
-    &lt;/Child&gt;
-  &lt;/div&gt;
-&lt;...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by zhangYaRan on August 17, 2019
-    </p>
-</div>
-<hr>
 
-<div class="post-preview">
-    <a href="/2019/08/17/vim-cn-im/">
-        <h2 class="post-title">
-            Vim 与中文输入法
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Using Vim with non-english input method
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（
+                <div class="post-preview">
+                    <a href="/2019/08/17/vue-slot/">
+                        <h2 class="post-title">
+                            Vue slot使用
+                        </h2>
 
+                        <h3 class="post-subtitle">
 
+                        </h3>
 
-我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 esc 接 normal 模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by zhangYaRan on August 17, 2019
-    </p>
-</div>
-<hr>
+                        <div class="post-content-preview">
 
-<div class="post-preview">
-    <a href="/2019/08/16/hello-2019/">
-        <h2 class="post-title">
-            Hello 2019
-        </h2>
-        
-        <h3 class="post-subtitle">
-             "Hello World, Hello Blog"
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  “Yeah It’s on. ”
+                            一.如果指定了 slot=”slotA”
+                            1
+                            2
+                            3
+                            4
+                            5
+                            6
+                            7
+                            8
+                            &lt;template&gt;
+                            &lt;div class="home"&gt;
+                            我是父组件
+                            &lt;Child&gt;
+                            &lt;p slot="slotA"&gt;hello world&lt;/p&gt;
+                            &lt;/Child&gt;
+                            &lt;/div&gt;
+                            &lt;...
+
+                        </div>
+                    </a>
+                    <p class="post-meta">
+                        Posted by zhangYaRan on August 17, 2019
+                    </p>
+                </div>
+                <hr>
+
+                <div class="post-preview">
+                    <a href="/2019/08/17/vim-cn-im/">
+                        <h2 class="post-title">
+                            Vim 与中文输入法
+                        </h2>
+
+                        <h3 class="post-subtitle">
+                            Using Vim with non-english input method
+                        </h3>
+
+                        <div class="post-content-preview">
+
+                            Update: 我最后还是放弃在 Vim 模式下输入中文了，mental model 的 cost 太重了（
 
 
-前言
 
-张亚然 的 Blog 就这么开通了。
+                            我相信很多中文世界的 Vimer 都遇到过这个烦恼，在 vim 的 insert 模式时可能突然想输个中文，输完之后会本能的直接 esc 接 normal
+                            模式操作，结果发现跳出来的是中文输入法……对于 vscode，我一般会在几次错误之后被逼到退出 vscode vim...
 
-跳过废话，直接看技术实现 
+                        </div>
+                    </a>
+                    <p class="post-meta">
+                        Posted by zhangYaRan on August 17, 2019
+                    </p>
+                </div>
+                <hr>
 
-2019 年，张亚然 总算有个地方可以好好写点东西了。
+                <div class="post-preview">
+                    <a href="/2019/08/16/hello-2019/">
+                        <h2 class="post-title">
+                            Hello 2019
+                        </h2>
 
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
+                        <h3 class="post-subtitle">
+                            "Hello World, Hello Blog"
+                        </h3>
 
-在玩了一...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by zhangYaRan on August 16, 2019
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2018/06/30/dreamer/">
-        <h2 class="post-title">
-            程序员中的梦想家
-        </h2>
-        
-        <h3 class="post-subtitle">
-            Dreamers among programmers
-        </h3>
-        
-        <div class="post-content-preview">
-            
-                
-  本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
+                        <div class="post-content-preview">
 
 
-有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool 看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。
-
-我每周...
-            
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on June 30, 2018
-    </p>
-</div>
-<hr>
+                            “Yeah It’s on. ”
 
 
-<!-- Pager -->
+                            前言
+
+                            张亚然 的 Blog 就这么开通了。
+
+                            跳过废话，直接看技术实现
+
+                            2019 年，张亚然 总算有个地方可以好好写点东西了。
+
+                            作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写
+                            Blog 的地儿都没有。
+
+                            在玩了一...
+
+                        </div>
+                    </a>
+                    <p class="post-meta">
+                        Posted by zhangYaRan on August 16, 2019
+                    </p>
+                </div>
+                <hr>
+
+                <div class="post-preview">
+                    <a href="/2018/06/30/dreamer/">
+                        <h2 class="post-title">
+                            程序员中的梦想家
+                        </h2>
+
+                        <h3 class="post-subtitle">
+                            Dreamers among programmers
+                        </h3>
+
+                        <div class="post-content-preview">
 
 
-    		</div>
-    <!-- Sidebar Container -->
+                            本文首发于我的知乎专栏 The Little Programmer，转载请保留链接 ;)
+
+
+                            有一类程序员是 visionary 型的，为了实现一些超前的 idea，绕过某些技术的限制，他们写的 code 晦涩高深得只有他们自己能懂，做出来的 tool
+                            看上去很美好结果处处是坑出了 bug 根本没法查，但正是这类人不断创造出新的东西，在洗礼之后成为一个个 big thing。
+
+                            我每周...
+
+                        </div>
+                    </a>
+                    <p class="post-meta">
+                        Posted by Hux on June 30, 2018
+                    </p>
+                </div>
+                <hr>
+
+
+                <!-- Pager -->
+
+
+            </div>
+            <!-- Sidebar Container -->
             <div class="
                 col-lg-3 col-lg-offset-0
                 col-md-3 col-md-offset-0
@@ -352,207 +354,206 @@
                 sidebar-container
             ">
                 <!-- Featured Tags -->
-                
 
 
-<section>
-    
-    <h5><a href="/archive/">FEATURED TAGS</a></h5>
-    <div class="tags">
-        
-            
-        
-            
-            <a data-sort="0002"
-                href="/archive/?tag=%E7%94%9F%E6%B4%BB" title="生活"
-                rel="2">生活</a>
-            
-            
-    </div>
-</section>
+
+                <section>
+
+                    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+
+
+
+
+                        <a data-sort="0002" href="/archive/?tag=%E7%94%9F%E6%B4%BB" title="生活" rel="2">生活</a>
+
+
+                    </div>
+                </section>
 
 
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
-    <hr>
-    <h5><a href="/about/">ABOUT ME</a></h5>
-    <div class="short-about">
-        
-        <img src="/img/avatar-zyr.jpg" />
-        
-        
-        <p>For the next quantum leap<br>离开世界之前，一切都是过程</p>
-        
-        <!-- SNS Link -->
-        
+                    <hr>
+                    <h5><a href="/about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+
+                        <img src="/img/avatar-zyr.jpg" />
 
 
-<ul class="list-inline">
+                        <p>For the next quantum leap<br>离开世界之前，一切都是过程</p>
+
+                        <!-- SNS Link -->
 
 
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/xiang-zhi-yu-shen-dong">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="http://weibo.com/5138674825">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/zhangYaRan">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
-    </div>
-</section>
+
+                        <ul class="list-inline">
+
+
+
+
+
+                            <li>
+                                <a target="_blank" href="https://www.zhihu.com/people/xiang-zhi-yu-shen-dong">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            <li>
+                                <a target="_blank" href="http://weibo.com/5138674825">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+
+
+                            <li>
+                                <a target="_blank" href="https://github.com/zhangYaRan">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </section>
 
                 <!-- Friends Blog -->
-                
-<hr>
-<h5>FRIENDS</h5>
-<ul class="list-inline">
-  
-  <li><a href="http://mida.re/">乱序</a></li>
-  
-  <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
-  
-  <li><a href="http://lingyu.wang/">天镶的博客</a></li>
-  
-  <li><a href="http://hmqk1995.github.io">Luke 的自留地</a></li>
-  
-  <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
-  
-  <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
-  
-  <li><a href="https://www.ruoyaowu.com/">David's Game</a></li>
-  
-  <li><a href="http://dhong.co">DHong Say</a></li>
-  
-  <li><a href="http://ingf.github.io/">尹峰以为</a></li>
-  
-  <li><a href="http://xieminis.me/">解旻的博客</a></li>
-  
-</ul>
 
-    		</div>
-        
-	</div>
-</div>
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    <li><a href="http://mida.re/">乱序</a></li>
+
+                    <li><a href="http://qianduan.guru/">前端外刊评论</a></li>
+
+                    <li><a href="http://lingyu.wang/">天镶的博客</a></li>
+
+                    <li><a href="http://hmqk1995.github.io">Luke 的自留地</a></li>
+
+                    <li><a href="http://ebnbin.com/">Ebn's Blog</a></li>
+
+                    <li><a href="http://blog.smdcn.net">SmdCn's Blog</a></li>
+
+                    <li><a href="https://www.ruoyaowu.com/">David's Game</a></li>
+
+                    <li><a href="http://dhong.co">DHong Say</a></li>
+
+                    <li><a href="http://ingf.github.io/">尹峰以为</a></li>
+
+                    <li><a href="http://xieminis.me/">解旻的博客</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
 
 
 
     <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- SNS Link -->
-                
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <!-- SNS Link -->
 
 
-<ul class="list-inline text-center">
+
+                    <ul class="list-inline text-center">
 
 
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://www.zhihu.com/people/xiang-zhi-yu-shen-dong">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa  fa-stack-1x fa-inverse">知</i>
-      </span>
-    </a>
-  </li>
-  
-  
-  <li>
-    <a target="_blank" href="http://weibo.com/5138674825">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-  
-  <li>
-    <a target="_blank" href="https://github.com/zhangYaRan">
-      <span class="fa-stack fa-lg">
-        <i class="fa fa-circle fa-stack-2x"></i>
-        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-      </span>
-    </a>
-  </li>
-  
-  
-</ul>
 
-                <p class="copyright text-muted">
-                    Copyright &copy; YaRan Blog 2019
-                </p>
+
+
+                        <li>
+                            <a target="_blank" href="https://www.zhihu.com/people/xiang-zhi-yu-shen-dong">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a target="_blank" href="http://weibo.com/5138674825">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+
+
+
+                        <li>
+                            <a target="_blank" href="https://github.com/zhangYaRan">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+
+                    <p class="copyright text-muted">
+                        Copyright &copy; YaRan Blog 2019
+                    </p>
+                    <p class="copyright text-muted">网站备案号：京ICP备19053126号-1</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+    <!-- jQuery -->
+    <script src="/js/jquery.min.js "></script>
 
-<!-- Bootstrap Core JavaScript -->
-<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
-<script src="/js/bootstrap.min.js "></script>
+    <!-- Bootstrap Core JavaScript -->
+    <!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+    <script src="/js/bootstrap.min.js "></script>
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/zyr-blog.min.js "></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/zyr-blog.min.js "></script>
 
-<!-- Service Worker -->
+    <!-- Service Worker -->
 
-<script src="/js/snackbar.js "></script>
-<script src="/js/sw-registration.js "></script>
+    <script src="/js/snackbar.js "></script>
+    <script src="/js/sw-registration.js "></script>
 
 
-<!-- async load function -->
-<script>
-    function async (u, c) {
-        var d = document,
-            t = 'script',
-            o = d.createElement(t),
-            s = d.getElementsByTagName(t)[0];
-        o.src = u;
-        if (c) {
-            o.addEventListener('load', function (e) {
-                c(null, e);
-            }, false);
+    <!-- async load function -->
+    <script>
+        function async (u, c) {
+            var d = document,
+                t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) {
+                o.addEventListener('load', function (e) {
+                    c(null, e);
+                }, false);
+            }
+            s.parentNode.insertBefore(o, s);
         }
-        s.parentNode.insertBefore(o, s);
-    }
-</script>
+    </script>
 
-<!--
+    <!--
      Because of the native support for backtick-style fenced code blocks
      right within the Markdown is landed in Github Pages,
      From V1.6, There is no need for Highlight.js,
@@ -562,7 +563,7 @@
      - https://help.github.com/articles/creating-and-highlighting-code-blocks/
      - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
 -->
-<!--
+    <!--
     <script>
         async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
             hljs.initHighlightingOnLoad();
@@ -575,56 +576,56 @@
 
 
 
-<!--fastClick.js -->
-<script>
-    async ("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
-        var $nav = document.querySelector("nav");
-        if ($nav) FastClick.attach($nav);
-    })
-</script>
+    <!--fastClick.js -->
+    <script>
+        async ("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function () {
+            var $nav = document.querySelector("nav");
+            if ($nav) FastClick.attach($nav);
+        })
+    </script>
 
 
-<!-- Google Analytics -->
+    <!-- Google Analytics -->
 
-<script>
-    // dynamic User by Hux
-    var _gaId = 'UA-49627206-1';
-    var _gaDomain = 'huangxuan.me';
+    <script>
+        // dynamic User by Hux
+        var _gaId = 'UA-49627206-1';
+        var _gaDomain = 'huangxuan.me';
 
-    // Originial
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        // Originial
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', _gaId, _gaDomain);
-    ga('send', 'pageview');
-</script>
-
-
-
-<!-- Baidu Tongji -->
+        ga('create', _gaId, _gaDomain);
+        ga('send', 'pageview');
+    </script>
 
 
 
-<!-- Side Catalog -->
+    <!-- Baidu Tongji -->
 
 
 
-<!-- Multi-Lingual -->
+    <!-- Side Catalog -->
 
 
 
-<!-- Image to hack wechat -->
-<img src="/img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+    <!-- Multi-Lingual -->
+
+
+
+    <!-- Image to hack wechat -->
+    <img src="/img/icon_wechat.png" width="0" height="0" />
+    <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
 
